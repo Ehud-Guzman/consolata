@@ -32,7 +32,7 @@ const Academics = () => {
       {/* Hero Section */}
       <section className="relative gradient-bg text-white py-20">
         <img
-          src="/public/UNICEF Roysambu-6.jpg.webp" 
+          src="/UNICEF Roysambu-6.jpg.webp" 
           alt="Students learning"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />

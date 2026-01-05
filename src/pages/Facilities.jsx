@@ -41,7 +41,7 @@ const Facilities = () => {
       {/* Hero */}
       <section className="relative gradient-bg text-white py-20">
         <img
-          src="/public/facilities.png" 
+          src="/facilities.png" 
           alt="School facilities"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />

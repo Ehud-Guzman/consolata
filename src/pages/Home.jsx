@@ -8,19 +8,19 @@ const Home = () => {
   
   const carouselImages = [
     {
-      src: "/public/outside-full-shot.jpg",
+      src: "/outside-full-shot.jpg",
       alt: "School compound with beautiful buildings"
     },
     {
-      src: "/public/facilities.png",
+      src: "/facilities.png",
       alt: "Students engaged in classroom learning"
     },
     {
-      src: "/public/UNICEF Roysambu-6.jpg.webp",
+      src: "/UNICEF Roysambu-6.jpg.webp",
       alt: "School activities and events"
     },
     {
-      src: "/public/consolata-hero.jpg",
+      src: "/consolata-hero.jpg",
       alt: "Happy students in school uniform"
     }
   ]

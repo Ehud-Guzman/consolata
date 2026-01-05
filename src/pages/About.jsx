@@ -16,7 +16,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative gradient-bg text-white py-20">
         <img
-          src="/public/outside-full-shot.jpg" 
+          src="/outside-full-shot.jpg" 
           alt="School exterior"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
