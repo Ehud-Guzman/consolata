@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* School specific utility classes */
+.btn-primary {
+  @apply transition-all duration-200 font-semibold py-3 px-6 rounded-lg bg-navy-primary hover:bg-navy-secondary text-white focus:outline-none focus:ring-2 focus:ring-navy-primary focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply transition-all duration-200 font-semibold py-3 px-6 rounded-lg border-2 border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-navy-primary focus:ring-offset-2;
+}
+
+.btn-accent {
+  @apply transition-all duration-200 font-semibold py-3 px-6 rounded-lg bg-gold-accent hover:bg-amber-600 text-white focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-offset-2;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+}
+
+.section-padding {
+  @apply py-12 px-4 sm:px-6 lg:px-8;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-navy-primary to-navy-secondary;
+}
+
+/* School badge styles */
+.badge-faith {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.badge-excellence {
+  @apply bg-green-100 text-green-700;
+}
+
+.badge-compassion {
+  @apply bg-red-100 text-red-700;
+}
+
+.badge-service {
+  @apply bg-purple-100 text-purple-700;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-navy-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-navy-secondary;
+}
+
+/* School theme */
+.school-divider {
+  @apply w-24 h-1 bg-gold-accent mx-auto my-6;
+}
+
+/* Mobile first responsive design */
+@media (max-width: 640px) {
+  .content-grid {
+    @apply grid-cols-1 gap-4;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .content-grid {
+    @apply grid-cols-2 gap-6;
+  }
+}
+
+@media (min-width: 1025px) {
+  .content-grid {
+    @apply grid-cols-3 gap-8;
+  }
+}
+
+/* Text shadows for headings */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
