@@ -58,7 +58,7 @@ export default function Home() {
           {/* LEFT */}
           <div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-              Our Lady of Grace and Compassion School 
+              Our Lady of Grace And Compassion Comprehensive School
             </h1>
 
             <p className="text-lg opacity-90 mb-6">

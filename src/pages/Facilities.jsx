@@ -59,7 +59,7 @@ const Facilities = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">A Conducive Learning Environment</h2>
             <p className="text-lg text-text-body">
-              At Our Lady of Grace and Compassion School , we believe that quality facilities enhance
+              At Our Lady of Grace And Compassion Comprehensive School, we believe that quality facilities enhance
               learning outcomes. Our infrastructure is carefully designed to promote safety,
               comfort, discipline, and holistic development.
             </p>

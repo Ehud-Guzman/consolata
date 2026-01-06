@@ -31,7 +31,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Get in touch with Our Lady of Grace and Compassion School 
+            Get in touch with Our Lady of Grace And Compassion Comprehensive School
           </p>
         </div>
       </section>

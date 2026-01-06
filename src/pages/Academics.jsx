@@ -112,7 +112,7 @@ const Academics = () => {
                   <p className="text-text-muted mb-4">KCPE {result.year} Top Performer</p>
                   <div className="bg-background-light p-4 rounded-lg">
                     <p className="text-text-body italic">
-                      "The teachers' dedication and the supportive environment at Our Lady of Grace and Compassion School  
+                      "The teachers' dedication and the supportive environment at Our Lady of Grace And Compassion Comprehensive School 
                       helped me achieve my best. The holistic approach prepared me for high school."
                     </p>
                   </div>

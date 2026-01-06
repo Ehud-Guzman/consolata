@@ -1,5 +1,5 @@
 export const schoolInfo = {
-  name: "Our Lady of Grace and Compassion School ",
+  name: "Our Lady of Grace And Compassion Comprehensive School",
   location: "Mundika, Busia County",
   tagline: "Catholic-based, holistic primary education",
   founded: {
