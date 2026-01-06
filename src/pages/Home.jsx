@@ -35,6 +35,7 @@ export default function Home() {
     }
   ]
 
+  // Auto carousel
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
@@ -42,11 +43,8 @@ export default function Home() {
     return () => clearInterval(timer)
   }, [])
 
-  const next = () =>
-    setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
-
-  const prev = () =>
-    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
+  const next = () => setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+  const prev = () => setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
 
   return (
     <div className="min-h-screen">
@@ -55,26 +53,24 @@ export default function Home() {
       <section className="gradient-bg text-white">
         <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT */}
+          {/* LEFT: Text */}
           <div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 break-words max-w-full">
               Our Lady of Grace And Compassion Comprehensive School
             </h1>
 
-            <p className="text-lg opacity-90 mb-6">
-              Busia County, Kenya
-            </p>
+            <p className="text-lg opacity-90 mb-6">Busia County, Kenya</p>
 
             <p className="text-2xl font-serif mb-8">
               Catholic-based, holistic primary education
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link to="/admissions" className="btn-accent px-6 py-3 inline-flex items-center">
+              <Link to="/admissions" className="btn-accent px-6 py-3 inline-flex items-center font-semibold transition hover:opacity-90">
                 Apply Now <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
 
-              <Link to="/about" className="btn-secondary px-6 py-3 border-2 border-white">
+              <Link to="/about" className="btn-secondary px-6 py-3 border-2 border-white font-semibold hover:bg-white hover:text-navy-primary transition">
                 Learn More
               </Link>
             </div>
@@ -82,64 +78,60 @@ export default function Home() {
             {/* STATS */}
             <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/20 pt-6 text-center">
               <div>
-                <div className="text-3xl font-bold">500+</div>
+                <div className="text-3xl md:text-4xl font-bold">500+</div>
                 <p className="text-sm opacity-80">Students</p>
               </div>
               <div>
-                <div className="text-3xl font-bold">40+</div>
+                <div className="text-3xl md:text-4xl font-bold">40+</div>
                 <p className="text-sm opacity-80">Teachers</p>
               </div>
               <div>
-                <div className="text-3xl font-bold">98%</div>
+                <div className="text-3xl md:text-4xl font-bold">98%</div>
                 <p className="text-sm opacity-80">Success</p>
               </div>
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT: Carousel */}
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl">
+            {/* Mobile fallback: show first image only */}
+            <div className="block md:hidden h-64">
+              <img
+                src={carouselImages[0].src}
+                alt={carouselImages[0].alt}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
 
-          {/* MOBILE IMAGE */}
-          <div className="block md:hidden rounded-xl overflow-hidden shadow-xl">
-            <img
-              src={carouselImages[0].src}
-              alt={carouselImages[0].alt}
-              className="w-full h-64 object-cover"
-            />
-          </div>
-
-          {/* DESKTOP CAROUSEL */}
-          <div className="hidden md:block relative rounded-2xl overflow-hidden shadow-2xl">
-            <div className="relative h-80 lg:h-96">
+            {/* Desktop Carousel */}
+            <div className="hidden md:block relative h-80 lg:h-96">
               {carouselImages.map((img, i) => (
                 <div
                   key={i}
-                  className={`absolute inset-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
                     i === currentSlide ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/30" />
                 </div>
               ))}
+
+              {/* Navigation buttons */}
+              <button
+                onClick={prev}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 p-2 rounded-full hover:bg-white/30 transition"
+              >
+                <ChevronLeft className="text-white h-6 w-6" />
+              </button>
+
+              <button
+                onClick={next}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 p-2 rounded-full hover:bg-white/30 transition"
+              >
+                <ChevronRight className="text-white h-6 w-6" />
+              </button>
             </div>
-
-            <button
-              onClick={prev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 p-2 rounded-full"
-            >
-              <ChevronLeft />
-            </button>
-
-            <button
-              onClick={next}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 p-2 rounded-full"
-            >
-              <ChevronRight />
-            </button>
           </div>
         </div>
       </section>
@@ -147,13 +139,10 @@ export default function Home() {
       {/* WHY US */}
       <section className="section-padding bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Why Choose Us
-          </h2>
-
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
-              <div key={i} className="card text-center hover:shadow-lg">
+              <div key={i} className="card text-center hover:shadow-lg transition-all p-6">
                 <div className="w-14 h-14 bg-navy-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
                   {f.icon}
                 </div>
@@ -173,7 +162,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {schoolInfo.kcpeResults.map((r, i) => (
-              <div key={i} className="card">
+              <div key={i} className="card p-6">
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <div className="text-4xl font-bold">{r.score}</div>
@@ -181,9 +170,7 @@ export default function Home() {
                   </div>
                   <div className="font-semibold">{r.name}</div>
                 </div>
-                <p className="italic text-text-body border-t pt-4">
-                  “Supportive teachers made the difference.”
-                </p>
+                <p className="italic text-text-body border-t pt-4">“Supportive teachers made the difference.”</p>
               </div>
             ))}
           </div>
@@ -192,15 +179,12 @@ export default function Home() {
 
       {/* CTA */}
       <section className="gradient-bg text-white text-center py-16">
-        <h2 className="text-3xl font-bold mb-6">
-          Begin Your Child’s Journey With Us
-        </h2>
-
+        <h2 className="text-3xl font-bold mb-6">Begin Your Child’s Journey With Us</h2>
         <div className="flex justify-center gap-4 flex-wrap">
-          <Link to="/contact" className="btn-accent px-8 py-4">
+          <Link to="/contact" className="btn-accent px-8 py-4 font-semibold transition hover:opacity-90">
             Schedule a Visit
           </Link>
-          <Link to="/admissions" className="btn-secondary border-2 border-white px-8 py-4">
+          <Link to="/admissions" className="btn-secondary border-2 border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-navy-primary">
             Download Prospectus
           </Link>
         </div>
