@@ -1,11 +1,11 @@
-# Our Lady Consolata School Website
+# Our Lady of Grace and Compassion School Website
 
-A modern, responsive website for Our Lady Consolata Primary School in Mundika, Busia County.
+A modern, responsive website for Our Lady of Grace and Compassion School  in Mundika, Busia County.
 
 ## 🚀 Quick Start
 
 ```bash
-cd "C:\Users\nyamu\Desktop\2026 Projects\Websites\Samples\Our lady Consolata\consolata-school"
+cd "C:\Users\nyamu\Desktop\2026 Projects\Websites\Samples\Our Lady of Grace and Compassion School \consolata-school"
 npm install
 npm run dev
 ```
@@ -72,7 +72,7 @@ Edit the respective page files in `src/pages/`.
 ## 📞 Contact Information
 
 The contact information is pre-filled with:
-- **School Name**: Our Lady Consolata Primary School
+- **School Name**: Our Lady of Grace and Compassion School 
 - **Location**: Mundika, Busia County
 - **Phone**: (123) 456-7890
 - **Email**: info@consolata.sc.ke
@@ -117,4 +117,4 @@ The built files will be in the `dist` directory, ready to deploy to any static h
 
 ---
 
-*Created specifically for Our Lady Consolata Primary School in Mundika, Busia County*
+*Created specifically for Our Lady of Grace and Compassion School  in Mundika, Busia County*

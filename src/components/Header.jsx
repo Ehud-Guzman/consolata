@@ -26,7 +26,7 @@ const Header = () => {
               <School className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-navy-primary">Our Lady Consolata</h1>
+              <h1 className="text-xl font-bold text-navy-primary">Our Lady of Grace and Compassion School </h1>
               <p className="text-xs text-text-muted">Primary School, Mundika</p>
             </div>
           </Link>

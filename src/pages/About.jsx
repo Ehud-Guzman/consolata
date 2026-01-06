@@ -35,7 +35,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-center mb-8">Who We Are</h2>
             <div className="text-lg text-text-body space-y-4">
               <p>
-                Our Lady Consolata Primary School is a Catholic institution in {schoolInfo.location}, 
+                Our Lady of Grace and Compassion School  is a Catholic institution in {schoolInfo.location}, 
                 dedicated to providing quality education that nurtures the whole child - academically, 
                 spiritually, socially, and emotionally.
               </p>

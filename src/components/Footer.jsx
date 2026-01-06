@@ -16,7 +16,7 @@ const Footer = () => {
                 <School className="h-7 w-7" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Our Lady Consolata</h3>
+                <h3 className="text-xl font-bold">Our Lady of Grace and Compassion School </h3>
                 <p className="text-sm text-gray-300">Primary School</p>
               </div>
             </div>
@@ -66,7 +66,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center space-y-1">
           <p className="text-gray-400">
-            © {currentYear} Our Lady Consolata Primary School. All rights reserved.
+            © {currentYear} Our Lady of Grace and Compassion School . All rights reserved.
           </p>
           <p className="text-sm text-gray-500">
             Founded by Grace & Compassion Benedictine Sisters
