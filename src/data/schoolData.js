@@ -9,7 +9,7 @@ export const schoolInfo = {
   founder: "Grace & Compassion Benedictine Sisters",
   contact: {
     phone: "(123) 456-7890",
-    email: "info@consolata.sc.ke",
+    email: "ourlady@graceandcompassion.com",
     address: "Mundika, Busia County, Kenya"
   },
   kcpeResults: [
