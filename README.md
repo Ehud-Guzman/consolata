@@ -75,7 +75,7 @@ The contact information is pre-filled with:
 - **School Name**: Our Lady of Grace and Compassion School 
 - **Location**: Mundika, Busia County
 - **Phone**: (123) 456-7890
-- **Email**: info@consolata.sc.ke
+- **Email**: ourlady@gmail
 
 ## 🎯 Pages Included
 
