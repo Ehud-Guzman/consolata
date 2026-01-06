@@ -103,3 +103,80 @@ body {
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Hero Section Styling */
+.gradient-bg {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%);
+}
+
+.school-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FDB913 0%, #FFFFFF 100%);
+  border-radius: 2px;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Button Styling */
+.btn-accent {
+  background: linear-gradient(135deg, #FDB913 0%, #FFC107 100%);
+  color: #1e3a8a;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid;
+}
+
+/* Section Padding */
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+  
+  /* Stack carousel above text on mobile */
+  .gradient-bg .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gradient-bg .grid > div:first-child {
+    order: 2;
+  }
+  
+  .gradient-bg .grid > div:last-child {
+    order: 1;
+    margin-bottom: 30px;
+  }
+}
+
+/* Carousel Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-slide {
+  animation: fadeIn 0.5s ease-in-out;
+}
