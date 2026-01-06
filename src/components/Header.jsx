@@ -1,78 +1,84 @@
-import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, School } from 'lucide-react'
+import { useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import { Menu, X, School } from "lucide-react"
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+export default function Header() {
+  const [open, setOpen] = useState(false)
   const location = useLocation()
-  
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Academics', path: '/academics' },
-    { name: 'Facilities', path: '/facilities' },
-    { name: 'Contact', path: '/contact' },
+
+  const nav = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Academics", path: "/academics" },
+    { name: "Facilities", path: "/facilities" },
+    { name: "Contact", path: "/contact" }
   ]
-  
-  const isActive = (path) => location.pathname === path
-  
+
+  const active = (p) => location.pathname === p
+
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-navy-primary rounded-lg flex items-center justify-center">
-              <School className="h-6 w-6 text-white" />
+        <div className="flex items-center justify-between h-20">
+
+          {/* LOGO */}
+          <Link to="/" className="flex items-center gap-3 min-w-0">
+            <div className="w-10 h-10 bg-navy-primary rounded-lg flex items-center justify-center shrink-0">
+              <School className="w-6 h-6 text-white" />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-navy-primary">Our Lady of Grace And Compassion Comprehensive School</h1>
-              <p className="text-xs text-text-muted">Primary School, Mundika</p>
+
+            <div className="min-w-0">
+              <h1 className="text-sm sm:text-base font-bold text-navy-primary truncate">
+                Our Lady of Grace & Compassion School
+              </h1>
+              <p className="text-xs text-text-muted truncate">
+                Mundika, Busia County
+              </p>
             </div>
           </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+
+          {/* DESKTOP NAV */}
+          <nav className="hidden md:flex gap-8">
+            {nav.map((n) => (
               <Link
-                key={item.name}
-                to={item.path}
-                className={`font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'text-navy-primary border-b-2 border-gold-accent'
-                    : 'text-text-body hover:text-navy-primary'
+                key={n.name}
+                to={n.path}
+                className={`font-medium transition ${
+                  active(n.path)
+                    ? "text-navy-primary border-b-2 border-gold-accent"
+                    : "text-text-body hover:text-navy-primary"
                 }`}
               >
-                {item.name}
+                {n.name}
               </Link>
             ))}
           </nav>
-          
-          {/* Mobile menu button */}
+
+          {/* MOBILE TOGGLE */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-lg hover:bg-background-card"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {open ? <X /> : <Menu />}
           </button>
         </div>
-        
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden pb-4 border-t">
-            <div className="flex flex-col space-y-2 pt-4">
-              {navItems.map((item) => (
+
+        {/* MOBILE MENU */}
+        {open && (
+          <div className="md:hidden border-t pb-4">
+            <div className="flex flex-col gap-2 pt-4">
+              {nav.map((n) => (
                 <Link
-                  key={item.name}
-                  to={item.path}
+                  key={n.name}
+                  to={n.path}
+                  onClick={() => setOpen(false)}
                   className={`px-4 py-3 rounded-lg font-medium ${
-                    isActive(item.path)
-                      ? 'bg-navy-primary text-white'
-                      : 'hover:bg-background-card'
+                    active(n.path)
+                      ? "bg-navy-primary text-white"
+                      : "hover:bg-background-card"
                   }`}
-                  onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  {n.name}
                 </Link>
               ))}
             </div>
@@ -82,5 +88,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
